@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+}
+
+.dashboard {
+  padding: 40px;
+}
+
+.dashboard h1 {
+  text-align: center;
+  color: #1f2937;
+}
+
+.subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+.machine-container {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.machine-card {
+  background-color: white;
+  width: 280px;
+  padding: 25px;
+  border-radius: 12px;
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.machine-card h2 {
+  text-align: center;
+  color: #1f2937;
+}
+
+.machine-card h3 {
+  text-align: center;
+}
+
+.machine-card p {
+  padding: 7px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.oee {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: #2563eb;
+}
+.progress-section {
+  margin: 15px 0;
+}
+
+.progress-label {
+  font-size: 14px;
+  margin-bottom: 7px;
+  color: #4b5563;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background-color: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #2563eb;
+  border-radius: 10px;
+}
+.alerts {
+  margin-top: 15px;
+}
+
+.alert-box {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  padding: 10px;
+  margin-top: 7px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.normal-box {
+  background-color: #dcfce7;
+  color: #166534;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+}
