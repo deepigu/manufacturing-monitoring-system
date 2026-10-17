@@ -1,10 +1,14 @@
+
 import random
 
+# Store production count for each machine
 machine_production = {
     "RF-001": 1000,
     "RF-002": 1000,
     "RF-003": 1000
 }
+
+
 def create_machine(machine_name):
 
     # Choose machine status
@@ -40,7 +44,9 @@ def create_machine(machine_name):
     planned_time_minutes = 480
 
     # Calculate actual running time
-    running_time_minutes = planned_time_minutes - downtime_minutes
+    running_time_minutes = (
+        planned_time_minutes - downtime_minutes
+    )
 
     # Calculate availability percentage
     availability = round(
@@ -48,9 +54,18 @@ def create_machine(machine_name):
         2
     )
 
-    # Generate machine data
+    # Generate machine temperature
     temperature = random.randint(45, 75)
-    parts_produced = random.randint(1000, 1500)
+
+    # Add new parts when machine is running
+    if machine_status == "RUNNING":
+        new_parts = random.randint(1, 10)
+        machine_production[machine_name] += new_parts
+
+    # Get current production total
+    parts_produced = machine_production[machine_name]
+
+    # Generate rejected parts
     rejected_parts = random.randint(0, 20)
 
     # Calculate good parts
