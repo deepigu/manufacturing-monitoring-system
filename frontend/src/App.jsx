@@ -25,7 +25,7 @@ function App() {
     const fetchData = async () => {
       try {
         const machinesResponse = await fetch(
-          "http://127.0.0.1:8000/machines"
+          "https://manufacturing-monitoring-system-api.onrender.com/machines"
         )
 
         if (!machinesResponse.ok) {
@@ -36,7 +36,7 @@ function App() {
         setMachines(machinesData)
 
         const historyResponse = await fetch(
-          "http://127.0.0.1:8000/machines/history"
+         "https://manufacturing-monitoring-system-api.onrender.com/machines/history"
         )
 
         if (!historyResponse.ok) {
