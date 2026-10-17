@@ -8,16 +8,19 @@ from database import (
     get_machine_history
 )
 
-
 app = FastAPI()
 
-# Create the database when the application starts
+# Create SQLite database
 create_database()
 
-# Allow React frontend to communicate with FastAPI
+# Allow local React and deployed Netlify frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173","http://localhost:5174","https://manufacturing-monitoring-system-api.onrender.com"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "https://smart-manufacturing-monitor.netlify.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -33,22 +36,18 @@ def home():
 
 @app.get("/machines")
 def get_machines():
-
     machines = [
         create_machine("RF-001"),
         create_machine("RF-002"),
         create_machine("RF-003")
     ]
 
-    # Save each machine reading into SQLite
     for machine in machines:
         save_machine_reading(machine)
 
     return machines
 
+
 @app.get("/machines/history")
 def machine_history():
     return get_machine_history()
-
-
-
